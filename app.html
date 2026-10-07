@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kitesurf - kite size calculator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Kitesurf</h1>
+  <p class="tag">Your weight, the wind, the right kite. Roughly, honestly.</p>
+  <nav><a href="index.html">About</a></nav>
+</header>
+
+<section class="card">
+  <h2>Session presets</h2>
+  <div id="presets" class="row"></div>
+</section>
+
+<section class="card">
+  <h2>Rider and wind</h2>
+  <div class="row">
+    <label>Rider weight (kg) <input id="wt" type="number" min="20" max="200" step="1" value="75"></label>
+    <label>Wind (knots) <input id="kn" type="number" min="1" max="60" step="0.5" value="15"></label>
+  </div>
+  <div id="sizeOut" class="out"></div>
+</section>
+
+<section class="card">
+  <h2>Your quiver</h2>
+  <div class="row">
+    <label>Kite you own (m2)
+      <select id="own">
+        <option>5</option><option>6</option><option>7</option><option>8</option>
+        <option>9</option><option>10</option><option selected>11</option><option>12</option>
+        <option>13.5</option><option>15</option><option>17</option>
+      </select>
+    </label>
+  </div>
+  <div id="quiverOut" class="out"></div>
+</section>
+
+<footer>
+  <p>Kite sizing uses the widely quoted weight x 2.2 / wind rule of thumb - it lands
+  mid-chart for many brands, but brand charts, kite type, board, skill and gusts all
+  shift the answer. When in doubt take the smaller kite, and never trust an app over
+  the beach briefing.</p>
+</footer>
+
+<script src="engine.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
