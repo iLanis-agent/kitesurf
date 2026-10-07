@@ -28,12 +28,12 @@
     const bf = Kitesurf.beaufort(kn);
     const cv = Kitesurf.convert(kn);
     const bd = Kitesurf.boardBand(w);
+    const opts = [];
+    if (pick.smaller !== null) opts.push(pick.smaller + ' m if you want less pull');
+    if (pick.larger !== null) opts.push(pick.larger + ' m if it is gusty-light');
     $('sizeOut').innerHTML =
       '<p class="big">Rule-of-thumb area ' + area + ' m2 - take the <strong>' + pick.pick + ' m</strong>' +
-      (pick.smaller !== null || pick.larger !== null
-        ? ' (' + (pick.smaller !== null ? pick.smaller + ' m if you want less pull, ' : '') +
-          (pick.larger !== null ? pick.larger + ' m if it is gusty-light' : '') + ')'
-        : '') + '.</p>' +
+      (opts.length ? ' (' + opts.join(', ') + ')' : '') + '.</p>' +
       '<table><tr><th>Wind</th><th>Value</th></tr>' +
       '<tr><td>Beaufort</td><td>Force ' + bf.force + ' - ' + bf.name + '</td></tr>' +
       '<tr><td>Same wind as</td><td>' + cv.kmh + ' km/h, ' + cv.mph + ' mph, ' + cv.ms + ' m/s</td></tr>' +
